@@ -65,7 +65,7 @@ type UnpackAll<List extends Composable[]> = {
 
 /**
  * A Composable that represents the sequential execution of multiple Composables.
- * The return type is a tuple with all results on the success data. 
+ * The return type is a tuple with all results on the success data.
  * This type can resolve to a FailToCompose when the composition won't type-check.
  */
 type SequenceReturn<Fns extends unknown[]> = Fns extends [
@@ -152,7 +152,7 @@ type SerializedResult<T> =
   | { success: false; errors: SerializableError[] }
 
 /**
- * The object used to validate either input or environment when creating domain functions.
+ * The object used to validate either input or environment when creating composables with a schema.
  */
 type ParserSchema<T extends unknown = unknown> = {
   safeParseAsync: (a: unknown) => Promise<
